@@ -1,0 +1,26 @@
+{
+  "name": "Calvin",
+  "description": "Quickly add available time slots to an email or message",
+  "version": "0.1.0",
+  "permissions": ["tabs"],
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["./foreground.js"]
+    }
+  ],
+  "action": {
+    "default_title": "My Calvin",
+    "default_popup": "./popup.html"
+  },
+  "icons": {
+    "16": "favicon-16x16.png",
+    "24": "favicon-24x24.png",
+    "32": "favicon-32x32.png",
+    "192": "favicon-192x192.png"
+  }
+}
